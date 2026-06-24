@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nastavek za žvilco</title>
+
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#242723;
+    color:#222;
+    line-height:1.5;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    margin-bottom:10px;
+    font-size:2.2rem;
+}
+
+.hero p{
+    max-width:600px;
+    margin:10px auto;
+}
+
+.price{
+    font-size:1.3rem;
+    margin-top:20px;
+}
+
+.notice{
+    margin-top:20px;
+    padding:12px;
+    background:#eef6ef;
+    border-radius:6px;
+}
+
+.cta button{
+    background:#2f6b3f;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+section{
+    margin-top:50px;
+}
+
+#viewer{
+    position:relative;
+    width:100%;
+    max-width:400px;
+    aspect-ratio:4/3;
+    border:1px solid #ddd;
+    background:white;
+    overflow:hidden;
+}
+
+#viewer img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+#intro{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.layer{ display:none; }
+
+.option-group{
+    margin-top:20px;
+}
+
+button{
+    margin:4px;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+input{
+    display:block;
+    margin:8px 0;
+    padding:10px;
+    width:100%;
+    max-width:400px;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    max-width:500px;
+    background:white;
+}
+
+th, td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+
+th{
+    background:#f5f5f5;
+}
+
+#orderBtn{
+    display:none;
+    margin-top:20px;
+    padding:14px 20px;
+    font-size:16px;
+    background:#2f6b3f;
+    color:white;
+    border:none;
+    border-radius:6px;
+}
+
+.about{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+#hero{
+  position:relative;
+  width:100%;
+  height:600px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background-image:url("gozd.jpg"); /* zamenjaj sliko */
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* temnenje slike */
+#hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+}
+
+/* vsebina nad overlayem */
+.hero-content{
+  position:relative;
+  z-index:1;
+  color:white;
+  max-width:700px;
+  padding:20px;
+}
+
+/* naslov */
+#hero h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+/* tekst */
+#hero p{
+  margin:8px 0;
+  font-size:1.1rem;
+}
+
+/* gumb */
+#hero button{
+  margin-top:20px;
+  background:#2f6b3f;
+  color:white;
+  border:none;
+  padding:14px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+#hero button:hover{
+  opacity:0.9;
+}
+
+/* mobilna prilagoditev */
+@media (max-width:700px){
+  #hero{
+    height:600px;
+  }
+
+  #hero h1{
+    font-size:2.2rem;
+  }
+}
+
+#info{
+  padding:60px 20px;
+  background-color: #364437;
+}
+
+.info-wrapper{
+  max-width:900px;
+  margin:auto;
+  color:#b0c2af;
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+/* LEVA STRAN */
+.info-left{
+  flex:1;
+}
+
+.info-left h2{
+  margin-bottom:10px;
+}
+
+.info-left p{
+  margin:10px 0;
+  line-height:1.5;
+}
+
+.info-left ul{
+  padding-left:20px;
+}
+
+/* DESNA STRAN */
+.info-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.info-right img{
+  width:100%;
+  max-width:450px;
+  border-radius:8px;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+  .info-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .info-right img{
+    max-width:280px;
+  }
+
+  .info-left ul{
+    display:inline-block;
+    text-align:left;
+  }
+}
+
+#problem-reseitev{
+  padding:60px 20px;
+  background:#364437;
+  color: #b0c2af;
+}
+
+.pr-wrapper{
+  max-width:900px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+/* 40% - 20% - 40% */
+.pr-left{
+  flex:4;
+}
+
+.pr-center{
+  flex:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.pr-right{
+  flex:4;
+}
+
+/* slika puščice */
+.pr-center img{
+  width:100%;
+  max-width:120px;
+  opacity:0.8;
+}
+
+/* styling besedila */
+.pr-left h2,
+.pr-right h2{
+  margin-bottom:10px;
+}
+
+.pr-left ul,
+.pr-right ul{
+  padding-left:20px;
+  line-height:1.6;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+  .pr-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .pr-center img{
+    transform:rotate(90deg);
+    max-width:80px;
+  }
+
+  .pr-left ul,
+  .pr-right ul{
+    display:inline-block;
+    text-align:left;
+  }
+}
+
+#about{
+  padding:60px 20px;
+  background:#364437;
+  color: #b0c2af;
+}
+
+.about-wrapper{
+  max-width:900px;
+  margin:auto;
+
+  display:flex;
+  gap:40px;
+  align-items:flex-start;
+}
+
+/* LEVO */
+.about-left{
+  flex:1;
+}
+
+.about-left h2{
+  margin-bottom:10px;
+}
+
+.about-left p{
+  margin:10px 0;
+  line-height:1.6;
+  background-color: #364437;
+}
+
+/* DESNO */
+.about-right{
+  flex:1;
+  background-color: #2f3b30;
+  padding:20px;
+  border-radius:8px;
+  border:1px solid #86998a;
+}
+
+.about-right h3{
+  margin-bottom:10px;
+}
+
+.about-right ul{
+  padding-left:20px;
+  line-height:1.6;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+  .about-wrapper{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .about-right ul{
+    display:inline-block;
+    text-align:left;
+  }
+}
+
+#usage{
+  padding:60px 20px;
+  background:#364437; /* enaka tema kot about */
+  color:#b0c2af;
+}
+
+.usage-wrapper{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.usage-wrapper h2{
+  margin-bottom:30px;
+  color:#b0c2af;
+}
+
+.usage-gallery{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  align-items:center;
+}
+
+/* slike */
+.usage-gallery img{
+  width:100%;
+  max-width:280px;
+  border-radius:12px; /* zaobljeni robovi */
+  object-fit:cover;
+  border:1px solid rgba(176,194,175,0.15);
+}
+
+/* mobile */
+@media (max-width:700px){
+  .usage-gallery{
+    flex-direction:column;
+  }
+
+  .usage-gallery img{
+    max-width:90%;
+  }
+}
+
+#offer{
+  padding:60px 20px;
+  background:#364437;
+  color:#b0c2af;
+}
+
+.offer-wrapper{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+}
+
+.offer-wrapper h2{
+  margin-bottom:20px;
+}
+
+.offer-price{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.offer-wrapper ul{
+  list-style:none;
+  padding:0;
+  margin:20px 0;
+}
+
+.offer-wrapper li{
+  margin:8px 0;
+}
+
+.offer-note{
+  margin-top:15px;
+  font-style:italic;
+  opacity:0.9;
+}
+
+#offer button{
+  margin-top:25px;
+  background:#b0c2af;
+  color:#364437;
+  border:none;
+  padding:14px 22px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+}
+
+#offer button:hover{
+  opacity:0.9;
+}
+
+#konfigurator{
+  padding:60px 20px;
+  background:#364437;
+  color:#b0c2af;
+}
+
+/* glavni okvir */
+.config-wrapper{
+  max-width:900px;
+  margin:auto;
+}
+
+/* naslov */
+#konfigurator h2,
+#konfigurator h3{
+  color:#b0c2af;
+}
+
+/* VIEWER (slika) */
+#viewer{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  height:320px;
+  margin:20px auto 30px auto;
+
+  border-radius:12px;
+  overflow:hidden;
+
+  background:#2f3a33;
+  border:1px solid rgba(176,194,175,0.15);
+}
+
+/* intro tekst */
+#intro{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:#b0c2af;
+  font-size:14px;
+}
+
+/* layer slike */
+.layer,
+#base{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+/* OPTION GROUPS */
+.option-group{
+  margin:20px 0;
+  padding:15px;
+  background:#2f3a33;
+  border-radius:10px;
+  border:1px solid rgba(176,194,175,0.12);
+}
+
+.option-group h3{
+  margin-bottom:10px;
+}
+
+/* GUMBI */
+button{
+  margin:4px;
+  padding:8px 12px;
+  cursor:pointer;
+
+  background:#b0c2af;
+  color:#364437;
+  border:none;
+  border-radius:6px;
+
+  font-size:13px;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+/* INPUTI */
+input{
+  display:block;
+  margin:8px 0;
+  padding:10px;
+  width:100%;
+  max-width:320px;
+
+  border-radius:6px;
+  border:1px solid rgba(176,194,175,0.2);
+
+  background:#2f3a33;
+  color:#b0c2af;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  max-width:420px;
+  margin-top:15px;
+  border-collapse:collapse;
+
+  background:#2f3a33;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid rgba(176,194,175,0.15);
+}
+
+th, td{
+  padding:10px;
+  border-bottom:1px solid rgba(176,194,175,0.1);
+  color:#b0c2af;
+}
+
+th{
+  text-align:left;
+}
+
+/* ORDER BUTTON */
+#orderBtn{
+  display:block;
+  margin:20px auto;
+  padding:14px 20px;
+
+  background:#b0c2af;
+  color:#364437;
+
+  font-weight:bold;
+  border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+<!-- HERO -->
+<section id="hero">
+
+  <div class="hero-content">
+
+    <h1 style="font-size: 35px; color:#578664"><b>Nastavek za žvilco</b></h1>
+    <p>
+      Skavtski pripomoček, ki čvrstno pritrdi tvojo žvilco (in kuli) na rutko, brez nadležnega zatikanja in opletanja
+    </p>
+    <p style="color: #a4c0b0;">
+      Nastal kot projekt za osebno mapredovanje in se razvil v konkreten izdelek.
+    </p>
+    <br>
+    <p style="font-weight:bold; color: #7bbb8c;">
+      Omejena serija za Emonado: 20 kosov
+    </p>
+
+
+    <button onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
+      Sestavi svojega
+    </button>
+
+  </div>
+
+</section>
+<!-- INFO -->
+<section id="info">
+
+  <div class="info-wrapper">
+
+    <!-- LEVO: TEKST -->
+    <div class="info-left">
+
+      <h2>Kako deluje?</h2>
+
+      <p>
+        Žvilca pogosto opleta ali ni lepo pritrjena na rutki.
+        To je nadležno, žvilca se lahko tudi izgubi.
+      </p>
+
+      <p>
+        Nastavek to reši tako, da žvilco fiksira na rutko in jo zaupljivo drži,
+        hkrati pa ostane vedno dosegljiva v nekaj gibih.
+      </p>
+
+      <p>To je druga generacija 3D natisnjenega in ročno sestavljenega izdelka, ki je ob pravilni uporabi robusten in trajen dodatek na skavtski rutki.</p>
+
+      <p>Dizajniran je, da oponaša izgled prvotnih lesenih prstanov in da ob njih ne iztopa preveč. Priporočeno je, da se poleg nastavka na rutko pritrdi vsaj en klasičen lesen prstan.</p>
+
+      <h3>Uporaba:</h3>
+
+      <ul>
+        <li>nastavek daj na rutko kot lesen prstan</li>
+        <li>odpri mehanizem</li>
+        <li>vstavi žvilco</li>
+        <li>zapri mehanizem</li>
+      </ul>
+
+      <p>
+        Nastal je kot skavtski projekt za osebno napredovanje (mečki) in je že leto dni preizkušen v realnih skavtskih razmerah.
+      </p>
+
+    </div>
+
+    <!-- DESNO: SLIKA -->
+    <div class="info-right">
+      <img src="nastavek1.jpg" alt="Nastavek za žvilco">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROBLEMI-REŠITEV -->
+<section id="problem-reseitev">
+
+  <div class="pr-wrapper">
+
+    <!-- LEVO: PROBLEMI -->
+    <div class="pr-left">
+
+      <h2>Težava</h2>
+
+      <ul>
+        <li>Vrjetno žvilco drži neka stara gumica na rutki</li>
+        <li>Zaradi opletanja žvilce težko delaš sklece</li>
+        <li>Lahko se odtakne in zgubi</li>
+        <li>Ob navalu na kosilo jo težko odtakneš</li>
+      </ul>
+
+    </div>
+
+    <!-- SREDINA: PUŠČICA -->
+    <div class="pr-center">
+      <img src="na-desno.png" alt="rešitev puščica">
+    </div>
+
+    <!-- DESNO: REŠITVE -->
+    <div class="pr-right">
+
+      <h2>Rešitev</h2>
+
+      <ul>
+        <li>Žvilca stoji elegantno v nastavku</li>
+        <li>Varno držanje brez premikanja</li>
+        <li>Žvilca je lepo in trdno pritrjena na rutko</li>
+        <li>Vedno hiter dostop do žvilce v enem gibu</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- JAZ -->
+<section id="about">
+
+  <div class="about-wrapper">
+
+    <!-- LEVO: TI -->
+    <div class="about-left">
+
+      <h2>Kdo sem</h2>
+
+      <p>
+        Žvjo, jaz sem Ambrož, to letu sem še vodnik levov v četi grajskih trubadurjev v stegu Ljubljane 2, moje skavtsko ime je pa Tehnični lev.
+      </p>
+
+      <p>
+        Ves čas v četi sem razmišljal in razvijal bolj tehnične ideje, ki so nato sledile v razvijanje trenutnega projekta nastavka za žvilco.
+      </p>
+
+      <p>
+        Z mano lahko prideš v stik preko DM-jov na <a href="https://www.instagram.com/ambro416/" target="_blank">instagramu</a> ali pa preko e-pošte ( ambroz.bevc@gmail.com ).
+      </p>
+
+    </div>
+
+    <!-- DESNO: RAZLOG / VREDNOTE -->
+    <div class="about-right">
+
+      <h3>Zakaj tak projekt</h3>
+      <p>V skavtskem letu 2025 sem za osebno napredovanje druge stopnje pričel delati projekt nastavka za žvilco. Opazil sem, da me zatikanje in nošenje žvilce moti, zato sem začel razvijati takrat preproost projekt, ki se je sedaj razvil v izdelek z večimi verzijami in generacijami.</p>
+
+      <p>
+        To ni “brand”, ki bi prioritiziral dobiček, vendar praktičen projekt, s katerim želim soskavtom olepšati uporabo žvilce na rutki.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SLIKE V UPORABI -->
+<section id="usage">
+
+  <div class="usage-wrapper">
+
+    <h2>Izgled izdelka</h2>
+
+    <div class="usage-gallery">
+
+      <img src="zvilca2.jpg" alt="Žvilca v uporabi 1">
+      <img src="zvilca3.jpg" alt="Žvilca v uporabi 2">
+      <img src="gif1.gif" alt="Animacija uporabe">
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PONUDBA -->
+<section id="offer">
+
+  <div class="offer-wrapper">
+
+    <h2>Si želiš nastavek, posebaj ukrojen tvoji rutki?</h2>
+    <p style="color:#e3fde8;">Nastavek lahko kustumiziraš z izbiro med barvami, ki so trenutno na voljo. <br><b>Nastavek ti predvideno lahko dostavim kar na Emonado.</b></p>
+    <p>
+     Priporočen prostovljni prispevek: <strong style="font-size: 28px; color:#e3fde8;">3 €</strong> na kos
+    </p>
+
+    <p>
+      S prispevkom pokriješ osnovne stroške izdelave izdelka, da se lahko projekt ohranja.<br>Serija nastavkov za emonado je omejena na <b>20 kosov</b>. 
+    </p>
+
+    <button style="background-color: #2f6b3f; color: #e4e4e4; font-style: normal" onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
+      Sestavi svojega
+    </button>
+
+  </div>
+
+</section>
+
+<!-- KONFIGURATOR -->
+<section id="konfigurator">
+<div class="config-wrapper">
+<h2>Konfigurator</h2>
+
+<div id="viewer">
+    <div id="intro">Sestavi svoj nastavek.</div>
+    <img src="guma.png" id="base" style="display:none;">
+    <img id="prstan" class="layer">
+    <img id="vzvod" class="layer">
+    <img id="gred" class="layer">
+</div>
+
+<div class="option-group">
+<h3>Prstan</h3>
+<button onclick="setChoice('prstan','modr')">Modra</button>
+<button onclick="setChoice('prstan','rdec')">Rdeča</button>
+<button onclick="setChoice('prstan','rjav')">Rjava</button>
+<button onclick="setChoice('prstan','zelen')">Zelena</button>
+<button onclick="setChoice('prstan','les')">Les</button>
+</div>
+
+<div class="option-group">
+<h3>Vzvod</h3>
+<button onclick="setChoice('vzvod','modr')">Modra</button>
+<button onclick="setChoice('vzvod','rdec')">Rdeča</button>
+<button onclick="setChoice('vzvod','rjav')">Rjava</button>
+<button onclick="setChoice('vzvod','zelen')">Zelena</button>
+<button onclick="setChoice('vzvod','roza')">Roza</button>
+<button onclick="setChoice('vzvod','oranzen')">Oranžna</button>
+</div>
+
+<div class="option-group">
+<h3>Gred</h3>
+<button onclick="setChoice('gred','modr')">Modra</button>
+<button onclick="setChoice('gred','rdec')">Rdeča</button>
+<button onclick="setChoice('gred','rjav')">Rjava</button>
+<button onclick="setChoice('gred','zelen')">Zelena</button>
+<button onclick="setChoice('gred','roza')">Roza</button>
+<button onclick="setChoice('gred','oranzen')">Oranžna</button>
+<button onclick="setChoice('gred','crn')">Črna</button>
+<button onclick="setChoice('gred','srebrn')">Srebrna</button>
+</div>
+
+<div class="option-group">
+<h3>Tesnilo</h3>
+<p>Različne debeline tesnil, odvisno od tega, kaj boš v nastavku nosil.</p>
+<ul>
+  <li>Tanko: Nova generacija žvilce (debelejša*)</li>
+  <li>Srednje: Stara generacija žvilce (tanjša), kovinska žvilca</li>
+  <li>Debelo: pribor, debel med 1,5 in 2,5 mm</li>
+</ul>
+<button onclick="setChoice('tesnilo','tanko')">Tanko</button>
+<button onclick="setChoice('tesnilo','srednje')">Srednje</button>
+<button onclick="setChoice('tesnilo','debelo')">Debelo</button>
+<p style="color:#51684b">*če tvoja žvilca izgleda tako kot jo trenutno prodajajo v skavtarnici, gre za novo generaciji žvilce (<a href="https://skavtarnica.skavti.si/products/zvilca?variant=47747329229138" target="_blank">preveri v skavtarnici</a>)</p>
+</div>
+
+<hr>
+
+<h3>Podatki naročnika</h3>
+
+<input placeholder="Ime*" oninput="update('ime',this.value)">
+<input placeholder="Steg*" oninput="update('steg',this.value)">
+<input placeholder="Četa*" oninput="update('ceta',this.value)">
+<input placeholder="Vod (opcijsko)" oninput="update('vod',this.value)">
+
+<h3>Povzetek naročila</h3>
+
+<table>
+<tr><th>Polje</th><th>Vrednost</th></tr>
+
+<tr><td>Ime</td><td id="t-ime"></td></tr>
+<tr><td>Steg</td><td id="t-steg"></td></tr>
+<tr><td>Četa</td><td id="t-ceta"></td></tr>
+<tr><td>Vod</td><td id="t-vod"></td></tr>
+
+<tr><td>Prstan</td><td id="t-prstan"></td></tr>
+<tr><td>Vzvod</td><td id="t-vzvod"></td></tr>
+<tr><td>Gred</td><td id="t-gred"></td></tr>
+<tr><td>Tesnilo</td><td id="t-tesnilo"></td></tr>
+
+</table>
+
+<button id="orderBtn" onclick="order()">
+Oddaj rezervacijo
+</button>
+
+</section>
+<br>
+</div>
+</div>
+
+<script>
+
+const URL = "https://script.google.com/macros/s/AKfycbyvTnvVOSP2sRaf-tgw5DJxaXIK9bRK5ED8ElW3QAGg0PlvJUHYhpjEuOaANDqUz_mK/exec";
+const SECRET = "ZS_SECRET_2026_X7K9";
+
+const labelMap = {
+  modr:"moder",
+  rdec:"rdeč",
+  rjav:"rjav",
+  zelen:"zelen",
+  les:"les",
+  roza:"roza",
+  oranzen:"oranžen",
+  crn:"črn",
+  srebrn:"srebrn",
+  tanko:"tanko",
+  srednje:"srednje debelo",
+  debelo:"debelo"
+};
+
+const state = {
+  ime:"",
+  steg:"",
+  ceta:"",
+  vod:"",
+  prstan:null,
+  vzvod:null,
+  gred:null,
+  tesnilo:null,
+  started:false
+};
+
+function pretty(v){ return labelMap[v] || v || ""; }
+
+function start(){
+  if(state.started) return;
+  state.started = true;
+  document.getElementById("intro").style.display="none";
+  document.getElementById("base").style.display="block";
+}
+
+function isReady(){
+  return state.ime && state.steg && state.ceta &&
+         state.prstan && state.vzvod && state.gred && state.tesnilo;
+}
+
+function refresh(){
+  document.getElementById("orderBtn").style.display =
+    isReady() ? "block" : "none";
+}
+
+function updateTable(){
+  document.getElementById("t-ime").innerText = state.ime || "";
+  document.getElementById("t-steg").innerText = state.steg || "";
+  document.getElementById("t-ceta").innerText = state.ceta || "";
+  document.getElementById("t-vod").innerText = state.vod || "";
+
+  document.getElementById("t-prstan").innerText = pretty(state.prstan);
+  document.getElementById("t-vzvod").innerText = pretty(state.vzvod);
+  document.getElementById("t-gred").innerText = pretty(state.gred);
+  document.getElementById("t-tesnilo").innerText = pretty(state.tesnilo);
+}
+
+function update(f,v){
+  state[f]=v;
+  refresh();
+  updateTable();
+}
+
+function setChoice(part,color){
+  start();
+  state[part]=color;
+
+  const img=document.getElementById(part);
+  if(img){
+    img.src=part+"-"+color+".png";
+    img.style.display="block";
+  }
+
+  refresh();
+  updateTable();
+}
+
+function getId(){
+  return Math.floor(1000 + Math.random() * 9000).toString();
+}
+
+function order(){
+
+  if(!isReady()){
+    alert("Izpolni vsa polja.");
+    return;
+  }
+
+  const orderId = getId();
+
+  const data = {
+    orderId: orderId,
+    ...state,
+    time: new Date().toISOString(),
+    key: SECRET
+  };
+
+  fetch(URL,{
+    method:"POST",
+    body: JSON.stringify(data)
+  })
+  .then(r => r.text())
+  .then(() => {
+
+    alert("NAROČENO ✔\n\nTvoj ID: " + orderId + "\nPrevzem na Emonadi.");
+
+  })
+  .catch(err => {
+
+    console.error(err);
+    alert("Napaka pri oddaji.");
+
+  });
+}
+
+</script>
+
+</body>
+</html>
