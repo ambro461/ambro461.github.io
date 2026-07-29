@@ -9,13 +9,13 @@
   --color-panel-alternate: #FFFFFF;
   --color-text: #1F2A24;
   --color-hero-project: #F7F5EE;
-  --color-hero-limited: #ffdaa3;
+  --color-hero-limited: #FFE4A3;
   --color-hero-title: #FFFFFF;
   --color-highlight-text: var(--color-primary-dark);
   --color-offer-button-text: #1F2A24;
   --color-primary: #2F6B4F;
   --color-primary-dark: #1F5139;
-  --color-accent: #ebab77;
+  --color-accent: #F2A93B;
   --color-button-text: #FFFFFF;
   --color-note: #5B6B62;
   --color-about-border: #D4DED3;
@@ -223,10 +223,10 @@ button:hover { opacity: .9; }
 .offer-lead { color: var(--color-highlight-text); }
 
 .offer-action {
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 14px 22px;
   background: var(--color-accent);
-  color: var(--color-offer-button-text);
+  color: var(--color-button-text);
   font-size: 16px;
 }
 
