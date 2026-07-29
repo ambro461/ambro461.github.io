@@ -3,26 +3,28 @@
    Spremeni vrednosti samo v tem razdelku za hiter preizkus barv.
    ========================================================= */
 :root {
-  --color-page-background: #242723;
-  --color-section-background: #364437;
-  --color-panel-background: #2f3a33;
-  --color-panel-alternate: #2f3b30;
-  --color-text: #b0c2af;
-  --color-hero-project: #a4c0b0;
-  --color-hero-limited: #7bbb8c;
-  --color-hero-title: #578664;
-  --color-highlight-text: #e3fde8;
-  --color-offer-button-text: #e4e4e4;
-  --color-accent: #2f6b3f;
-  --color-button-text: #364437;
-  --color-note: #51684b;
-  --color-about-border: #86998a;
-  --color-white: #fff;
-  --color-hero-overlay: rgba(0, 0, 0, .45);
-  --color-border: rgba(176, 194, 175, .15);
-  --color-border-soft: rgba(176, 194, 175, .1);
-  --color-input-border: rgba(176, 194, 175, .2);
-  --color-option-border: rgba(176, 194, 175, .12);
+  --color-page-background: #F7F5EE;
+  --color-section-background: #E9F0E7;
+  --color-panel-background: #FFFFFF;
+  --color-panel-alternate: #FFFFFF;
+  --color-text: #1F2A24;
+  --color-hero-project: #F7F5EE;
+  --color-hero-limited: #FFE4A3;
+  --color-hero-title: #FFFFFF;
+  --color-highlight-text: var(--color-primary-dark);
+  --color-offer-button-text: #1F2A24;
+  --color-primary: #2F6B4F;
+  --color-primary-dark: #1F5139;
+  --color-accent: #F2A93B;
+  --color-button-text: #FFFFFF;
+  --color-note: #5B6B62;
+  --color-about-border: #D4DED3;
+  --color-white: #FFFFFF;
+  --color-hero-overlay: rgba(31, 42, 36, .42);
+  --color-border: #D4DED3;
+  --color-border-soft: #E9F0E7;
+  --color-input-border: #D4DED3;
+  --color-option-border: #D4DED3;
 }
 
 /* =========================================================
@@ -48,7 +50,7 @@ button {
   cursor: pointer;
   border: 0;
   border-radius: 6px;
-  background: var(--color-text);
+  background: var(--color-primary);
   color: var(--color-button-text);
   font-size: 13px;
 }
@@ -113,7 +115,7 @@ button:hover { opacity: .9; }
   margin-top: 20px;
   padding: 14px 22px;
   background: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-button-text);
   font-size: 16px;
 }
 
@@ -315,6 +317,8 @@ th { text-align: left; }
   display: block;
   margin: 20px auto;
   padding: 14px 20px;
+  background: var(--color-accent);
+  color: var(--color-button-text);
   border-radius: 8px;
   font-weight: 700;
 }
