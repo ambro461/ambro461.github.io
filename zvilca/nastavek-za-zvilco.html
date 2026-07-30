@@ -6,9 +6,31 @@
 <title>Nastavek za žvilco</title>
 
 <link rel="stylesheet" href="nastavek-za-zvilco.css">
+<link rel="icon" type="image/png" href="slike/logo.png">
 </head>
 
 <body>
+<header class="site-header">
+  <a class="brand" href="#hero" aria-label="Na vrh strani">
+    <img class="brand-logo" src="slike/logo.png" alt="">
+    <span>Nastavek za žvilco</span>
+  </a>
+
+  <div class="header-actions">
+    <label class="sr-only" for="chapter-menu">Izberi poglavje</label>
+    <select id="chapter-menu" class="chapter-menu">
+      <option value="" selected disabled>Poglavja</option>
+      <option value="info">Kako deluje?</option>
+      <option value="problem-reseitev">Težava in rešitev</option>
+      <option value="about">Kdo sem</option>
+      <option value="usage">Izgled izdelka</option>
+      <option value="offer">Ponudba</option>
+      <option value="konfigurator">Konfigurator</option>
+    </select>
+    <a class="header-cta" href="#konfigurator">Sestavi svojega</a>
+  </div>
+</header>
+
 <section id="hero">
   <img class="hero-background" src="slike/gozd.jpg" alt="">
 
@@ -185,7 +207,7 @@
       S prispevkom pokriješ osnovne stroške izdelave izdelka, da se lahko projekt ohranja.<br>Serija nastavkov za emonado je omejena na <b>20 kosov</b>.
     </p>
 
-    <button class="offer-action" onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})" style="color: white;">
+    <button class="offer-action" onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
       Sestavi svojega
     </button>
 
@@ -283,10 +305,32 @@ Oddaj rezervacijo
 </div>
 </section>
 
+<footer class="site-footer">
+  <div class="footer-content">
+    <div>
+      <p class="footer-title">Nastavek za žvilco</p>
+      <p>Skavtski projekt za enostavnejše nošenje žvilce na rutki.</p>
+    </div>
+    <div class="footer-contact">
+      <p>Kontakt</p>
+      <a href="mailto:ambroz.bevc@gmail.com">ambroz.bevc@gmail.com</a>
+      <a href="https://www.instagram.com/ambro416/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Ambrož Bevc · Vse pravice pridržane.</p>
+</footer>
+
 <script>
 
 const URL = "https://script.google.com/macros/s/AKfycbxQxJgyjJ8N--4qT0uSKP3hRu8fDyT0WMNCm3U4AeAzrRZmwuQJiZuiNJukAdSipZnE/exec";
 const SECRET = "ZS_SECRET_2026_X7K9";
+const chapterMenu = document.getElementById("chapter-menu");
+
+chapterMenu.addEventListener("change", () => {
+  document.getElementById(chapterMenu.value)?.scrollIntoView({
+    behavior: "smooth"
+  });
+});
 
 const labelMap = {
   modr:"moder",
