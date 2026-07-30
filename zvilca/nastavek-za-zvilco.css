@@ -44,6 +44,28 @@ section {
   background: var(--color-section-background);
 }
 
+section:not(#hero) {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Izmenične podlage jasno ločijo poglavja. */
+#info,
+#about,
+#offer {
+  background: var(--color-white);
+}
+
+#problem-reseitev,
+#usage,
+#konfigurator {
+  background: var(--color-section-background);
+}
+
+/* Izrazit prehod iz uvodne gozdne slike v prvo poglavje. */
+#info {
+  border-top: 12px solid var(--color-primary-dark);
+}
+
 button {
   margin: 4px;
   padding: 8px 12px;
@@ -56,6 +78,87 @@ button {
 }
 
 button:hover { opacity: .9; }
+
+/* =========================================================
+   FIKSNA NAVIGACIJA
+   ========================================================= */
+.site-header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  padding: 12px clamp(20px, 5vw, 72px);
+  border-top: 4px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-accent);
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 2px 14px rgba(31, 42, 36, .08);
+}
+
+.brand,
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand {
+  gap: 10px;
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chapter-menu {
+  min-width: 160px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-panel-background);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.header-cta {
+  min-height: 40px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header-cta:hover { opacity: .9; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+section { scroll-margin-top: 92px; }
 
 /* =========================================================
    UVODNA PASICA
@@ -160,9 +263,7 @@ button:hover { opacity: .9; }
 }
 
 #problem-reseitev,
-#about,
 #usage,
-#offer,
 #konfigurator { background: var(--color-section-background); }
 
 .pr-wrapper { gap: 20px; }
@@ -324,9 +425,86 @@ th { text-align: left; }
 }
 
 /* =========================================================
+   NOGA STRANI
+   ========================================================= */
+.site-footer {
+  padding: 48px 20px 22px;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.footer-content p { margin: 0 0 8px; }
+
+.footer-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.footer-contact a {
+  color: var(--color-hero-limited);
+  text-underline-offset: 3px;
+}
+
+.footer-copy {
+  max-width: 900px;
+  margin: 36px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .25);
+  color: var(--color-hero-project);
+  font-size: .9rem;
+}
+
+/* =========================================================
    MOBILNI PRIKAZ
    ========================================================= */
 @media (max-width: 700px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    min-height: 112px;
+    padding: 10px 16px;
+  }
+
+  .brand { font-size: 1rem; }
+
+  .brand-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .chapter-menu {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .header-cta {
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: .9rem;
+  }
+
+  section { scroll-margin-top: 132px; }
+
   #hero h1 { font-size: 2.2rem; }
 
   .info-wrapper,
@@ -352,4 +530,12 @@ th { text-align: left; }
     display: inline-block;
     text-align: left;
   }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contact { align-items: center; }
+  .footer-copy { text-align: center; }
 }
