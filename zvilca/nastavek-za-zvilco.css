@@ -1,454 +1,355 @@
-<!DOCTYPE html>
-<html lang="sl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nastavek za žvilco</title>
-
-<link rel="stylesheet" href="nastavek-za-zvilco.css">
-<link rel="icon" type="image/png" href="slike/logo.png">
-</head>
-
-<body>
-<header class="site-header">
-  <a class="brand" href="#hero" aria-label="Na vrh strani">
-    <img class="brand-logo" src="slike/logo.png" alt="">
-    <span>Nastavek za žvilco</span>
-  </a>
-
-  <div class="header-actions">
-    <label class="sr-only" for="chapter-menu">Izberi poglavje</label>
-    <select id="chapter-menu" class="chapter-menu">
-      <option value="" selected disabled>Poglavja</option>
-      <option value="info">Kako deluje?</option>
-      <option value="problem-reseitev">Težava in rešitev</option>
-      <option value="about">Kdo sem</option>
-      <option value="usage">Izgled izdelka</option>
-      <option value="offer">Ponudba</option>
-      <option value="konfigurator">Konfigurator</option>
-    </select>
-    <a class="header-cta" href="#konfigurator">Sestavi svojega</a>
-  </div>
-</header>
-
-<section id="hero">
-  <img class="hero-background" src="slike/gozd.jpg" alt="">
-
-  <div class="hero-content">
-
-    <h1>Nastavek za žvilco</h1>
-    <p>
-      Skavtski pripomoček, ki čvrstno pritrdi tvojo žvilco (in kuli) na rutko, brez nadležnega zatikanja in opletanja
-    </p>
-    <p class="hero-project">
-      Nastal kot projekt za osebno napredovanje in se razvil v konkreten izdelek.
-    </p>
-    <br>
-    <p class="hero-limited">
-      Omejena serija za Emonado: 20 kosov
-    </p>
-
-    <button onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
-      Sestavi svojega
-    </button>
-
-  </div>
-
-</section>
-<section id="info">
-
-  <div class="info-wrapper">
-
-    <div class="info-left">
-
-      <h2>Kako deluje?</h2>
-
-      <p>
-        Žvilca pogosto opleta ali ni lepo pritrjena na rutki.
-        To je nadležno, žvilca se lahko tudi izgubi.
-      </p>
-
-      <p>
-        Nastavek to reši tako, da žvilco fiksira na rutko in jo zaupljivo drži,
-        hkrati pa ostane vedno dosegljiva v nekaj gibih.
-      </p>
-
-      <p>To je druga generacija 3D natisnjenega in ročno sestavljenega izdelka, ki je ob pravilni uporabi robusten in trajen dodatek na skavtski rutki.</p>
-
-      <p>Dizajniran je, da oponaša izgled prvotnih lesenih prstanov in da ob njih ne iztopa preveč. Priporočeno je, da se poleg nastavka na rutko pritrdi vsaj en klasičen lesen prstan.</p>
-
-      <h3>Uporaba:</h3>
-
-      <ul>
-        <li>nastavek daj na rutko kot lesen prstan</li>
-        <li>odpri mehanizem</li>
-        <li>vstavi žvilco</li>
-        <li>zapri mehanizem</li>
-      </ul>
-
-      <p>
-        Nastal je kot skavtski projekt za osebno napredovanje (mečki) in je že leto dni preizkušen v realnih skavtskih razmerah.
-      </p>
-
-    </div>
-
-    <div class="info-right">
-      <img src="slike/nastavek1.jpg" alt="Nastavek za žvilco">
-    </div>
-
-  </div>
-
-</section>
-
-<section id="problem-reseitev">
-
-  <div class="pr-wrapper">
-
-    <div class="pr-left">
-
-      <h2>Težava</h2>
-
-      <ul>
-        <li>Vrjetno žvilco drži neka stara gumica na rutki</li>
-        <li>Zaradi opletanja žvilce težko delaš sklece</li>
-        <li>Lahko se odtakne in zgubi</li>
-        <li>Ob navalu na kosilo jo težko odtakneš</li>
-      </ul>
-
-    </div>
-
-    <div class="pr-center">
-      <img src="slike/na-desno.png" alt="rešitev puščica">
-    </div>
-
-    <div class="pr-right">
-
-      <h2>Rešitev</h2>
-
-      <ul>
-        <li>Žvilca stoji elegantno v nastavku</li>
-        <li>Varno držanje brez premikanja</li>
-        <li>Žvilca je lepo in trdno pritrjena na rutko</li>
-        <li>Vedno hiter dostop do žvilce v enem gibu</li>
-      </ul>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="about">
-
-  <div class="about-wrapper">
-
-    <div class="about-left">
-
-      <h2>Kdo sem</h2>
-
-      <p>
-        Žvjo, jaz sem Ambrož, to letu sem še vodnik levov v četi grajskih trubadurjev v stegu Ljubljane 2, moje skavtsko ime je pa Tehnični lev.
-      </p>
-
-      <p>
-        Ves čas v četi sem razmišljal in razvijal bolj tehnične ideje, ki so nato sledile v razvijanje trenutnega projekta nastavka za žvilco.
-      </p>
-
-      <p>
-        Z mano lahko prideš v stik preko DM-jov na <a href="https://www.instagram.com/ambro416/" target="_blank">instagramu</a> ali pa preko e-pošte ( ambroz.bevc@gmail.com ).
-      </p>
-
-    </div>
-
-    <div class="about-right">
-
-      <h3>Zakaj tak projekt</h3>
-      <p>V skavtskem letu 2025 sem za osebno napredovanje druge stopnje pričel delati projekt nastavka za žvilco. Opazil sem, da me zatikanje in nošenje žvilce moti, zato sem začel razvijati takrat preproost projekt, ki se je sedaj razvil v izdelek z večimi verzijami in generacijami.</p>
-
-      <p>
-        To ni “brand”, ki bi prioritiziral dobiček, vendar praktičen projekt, s katerim želim soskavtom olepšati uporabo žvilce na rutki.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="usage">
-
-  <div class="usage-wrapper">
-
-    <h2>Izgled izdelka</h2>
-
-    <div class="usage-gallery">
-
-      <img src="slike/zvilca2.jpg" alt="Žvilca v uporabi 1">
-      <img src="slike/zvilca3.jpg" alt="Žvilca v uporabi 2">
-      <img src="slike/gif1.gif" alt="Animacija uporabe">
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="offer">
-
-  <div class="offer-wrapper">
-
-    <h2>Si želiš nastavek, posebej ukrojen tvoji rutki?</h2>
-    <p class="offer-lead">Nastavek lahko prilagodiš z izbiro med barvami, ki so trenutno na voljo. <br><b>Nastavek ti predvideno lahko dostavim kar na Emonado.</b></p>
-    <p>
-     Priporočen prostovoljni prispevek: <strong class="offer-price">3 €</strong> na kos
-    </p>
-
-    <p>
-      S prispevkom pokriješ osnovne stroške izdelave izdelka, da se lahko projekt ohranja.<br>Serija nastavkov za emonado je omejena na <b>20 kosov</b>.
-    </p>
-
-    <button class="offer-action" onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
-      Sestavi svojega
-    </button>
-
-  </div>
-
-</section>
-
-<section id="konfigurator">
-<div class="config-wrapper">
-<h2>Konfigurator</h2>
-
-<div id="viewer">
-    <div id="intro">Sestavi svoj nastavek.</div>
-    <img src="slike/guma.png" id="base" alt="">
-    <img id="prstan" class="layer">
-    <img id="vzvod" class="layer">
-    <img id="gred" class="layer">
-</div>
-
-<div class="option-group">
-<h3>Prstan</h3>
-<button onclick="setChoice('prstan','modr')">Modra</button>
-<button onclick="setChoice('prstan','rdec')">Rdeča</button>
-<button onclick="setChoice('prstan','rjav')">Rjava</button>
-<button onclick="setChoice('prstan','zelen')">Zelena</button>
-<button onclick="setChoice('prstan','les')">Les</button>
-</div>
-
-<div class="option-group">
-<h3>Vzvod</h3>
-<button onclick="setChoice('vzvod','modr')">Modra</button>
-<button onclick="setChoice('vzvod','rdec')">Rdeča</button>
-<button onclick="setChoice('vzvod','rjav')">Rjava</button>
-<button onclick="setChoice('vzvod','zelen')">Zelena</button>
-<button onclick="setChoice('vzvod','roza')">Roza</button>
-<button onclick="setChoice('vzvod','oranzen')">Oranžna</button>
-</div>
-
-<div class="option-group">
-<h3>Gred</h3>
-<button onclick="setChoice('gred','modr')">Modra</button>
-<button onclick="setChoice('gred','rdec')">Rdeča</button>
-<button onclick="setChoice('gred','rjav')">Rjava</button>
-<button onclick="setChoice('gred','zelen')">Zelena</button>
-<button onclick="setChoice('gred','roza')">Roza</button>
-<button onclick="setChoice('gred','oranzen')">Oranžna</button>
-<button onclick="setChoice('gred','crn')">Črna</button>
-<button onclick="setChoice('gred','srebrn')">Srebrna</button>
-</div>
-
-<div class="option-group">
-<h3>Tesnilo</h3>
-<p>Različne debeline tesnil, odvisno od tega, kaj boš v nastavku nosil.</p>
-<ul>
-  <li>Tanko: Nova generacija žvilce (debelejša*)</li>
-  <li>Srednje: Stara generacija žvilce (tanjša), kovinska žvilca</li>
-  <li>Debelo: pribor, debel med 1,5 in 2,5 mm</li>
-</ul>
-<button onclick="setChoice('tesnilo','tanko')">Tanko</button>
-<button onclick="setChoice('tesnilo','srednje')">Srednje</button>
-<button onclick="setChoice('tesnilo','debelo')">Debelo</button>
-<p class="config-note">*če tvoja žvilca izgleda tako kot jo trenutno prodajajo v skavtarnici, gre za novo generacijo žvilce (<a href="https://skavtarnica.skavti.si/products/zvilca?variant=47747329229138" target="_blank">preveri v skavtarnici</a>)</p>
-</div>
-
-<hr>
-
-<h3>Podatki naročnika</h3>
-
-<input placeholder="Ime*" oninput="update('ime',this.value)">
-<input placeholder="Steg*" oninput="update('steg',this.value)">
-<input placeholder="Četa*" oninput="update('ceta',this.value)">
-<input placeholder="Vod (opcijsko)" oninput="update('vod',this.value)">
-
-<h3>Povzetek naročila</h3>
-
-<table>
-<tr><th>Polje</th><th>Vrednost</th></tr>
-
-<tr><td>Ime</td><td id="t-ime"></td></tr>
-<tr><td>Steg</td><td id="t-steg"></td></tr>
-<tr><td>Četa</td><td id="t-ceta"></td></tr>
-<tr><td>Vod</td><td id="t-vod"></td></tr>
-
-<tr><td>Prstan</td><td id="t-prstan"></td></tr>
-<tr><td>Vzvod</td><td id="t-vzvod"></td></tr>
-<tr><td>Gred</td><td id="t-gred"></td></tr>
-<tr><td>Tesnilo</td><td id="t-tesnilo"></td></tr>
-
-</table>
-
-<button id="orderBtn" onclick="order()">
-Oddaj rezervacijo
-</button>
-
-</div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <div>
-      <p class="footer-title">Nastavek za žvilco</p>
-      <p>Skavtski projekt za enostavnejše nošenje žvilce na rutki.</p>
-    </div>
-    <div class="footer-contact">
-      <p>Kontakt</p>
-      <a href="mailto:ambroz.bevc@gmail.com">ambroz.bevc@gmail.com</a>
-      <a href="https://www.instagram.com/ambro416/" target="_blank" rel="noopener noreferrer">Instagram</a>
-    </div>
-  </div>
-  <p class="footer-copy">© 2026 Ambrož Bevc · Vse pravice pridržane.</p>
-</footer>
-
-<script>
-
-const URL = "https://script.google.com/macros/s/AKfycbxQxJgyjJ8N--4qT0uSKP3hRu8fDyT0WMNCm3U4AeAzrRZmwuQJiZuiNJukAdSipZnE/exec";
-const SECRET = "ZS_SECRET_2026_X7K9";
-const chapterMenu = document.getElementById("chapter-menu");
-
-chapterMenu.addEventListener("change", () => {
-  document.getElementById(chapterMenu.value)?.scrollIntoView({
-    behavior: "smooth"
-  });
-});
-
-const labelMap = {
-  modr:"moder",
-  rdec:"rdeč",
-  rjav:"rjav",
-  zelen:"zelen",
-  les:"les",
-  roza:"roza",
-  oranzen:"oranžen",
-  crn:"črn",
-  srebrn:"srebrn",
-  tanko:"tanko",
-  srednje:"srednje debelo",
-  debelo:"debelo"
-};
-
-const state = {
-  ime:"",
-  steg:"",
-  ceta:"",
-  vod:"",
-  prstan:null,
-  vzvod:null,
-  gred:null,
-  tesnilo:null,
-  started:false
-};
-
-function pretty(v){ return labelMap[v] || v || ""; }
-
-function start(){
-  if(state.started) return;
-  state.started = true;
-  document.getElementById("intro").style.display="none";
-  document.getElementById("base").style.display="block";
+/* =========================================================
+   BARVNA PALETA
+   Spremeni vrednosti samo v tem razdelku za hiter preizkus barv.
+   ========================================================= */
+:root {
+  --color-page-background: #F7F5EE;
+  --color-section-background: #E9F0E7;
+  --color-panel-background: #FFFFFF;
+  --color-panel-alternate: #FFFFFF;
+  --color-text: #1F2A24;
+  --color-hero-project: #F7F5EE;
+  --color-hero-limited: #FFE4A3;
+  --color-hero-title: #FFFFFF;
+  --color-highlight-text: var(--color-primary-dark);
+  --color-offer-button-text: #1F2A24;
+  --color-primary: #2F6B4F;
+  --color-primary-dark: #1F5139;
+  --color-accent: #F2A93B;
+  --color-button-text: #FFFFFF;
+  --color-note: #5B6B62;
+  --color-about-border: #D4DED3;
+  --color-white: #FFFFFF;
+  --color-hero-overlay: rgba(31, 42, 36, .42);
+  --color-border: #D4DED3;
+  --color-border-soft: #E9F0E7;
+  --color-input-border: #D4DED3;
+  --color-option-border: #D4DED3;
 }
 
-function isReady(){
-  return state.ime && state.steg && state.ceta &&
-         state.prstan && state.vzvod && state.gred && state.tesnilo;
+/* =========================================================
+   OSNOVNI SLOGI
+   ========================================================= */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-page-background);
+  color: var(--color-text);
+  font: 16px/1.5 Arial, sans-serif;
 }
 
-function refresh(){
-  document.getElementById("orderBtn").style.display =
-    isReady() ? "block" : "none";
+section {
+  padding: 60px 20px;
+  background: var(--color-section-background);
 }
 
-function updateTable(){
-  document.getElementById("t-ime").innerText = state.ime || "";
-  document.getElementById("t-steg").innerText = state.steg || "";
-  document.getElementById("t-ceta").innerText = state.ceta || "";
-  document.getElementById("t-vod").innerText = state.vod || "";
-
-  document.getElementById("t-prstan").innerText = pretty(state.prstan);
-  document.getElementById("t-vzvod").innerText = pretty(state.vzvod);
-  document.getElementById("t-gred").innerText = pretty(state.gred);
-  document.getElementById("t-tesnilo").innerText = pretty(state.tesnilo);
+button {
+  margin: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-primary);
+  color: var(--color-button-text);
+  font-size: 13px;
 }
 
-function update(f,v){
-  state[f]=v;
-  refresh();
-  updateTable();
+button:hover { opacity: .9; }
+
+/* =========================================================
+   UVODNA PASICA
+   ========================================================= */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
 }
 
-function setChoice(part,color){
-  start();
-  state[part]=color;
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  const img=document.getElementById(part);
-  if(img){
-    img.src = "slike/" + part + "-" + color + ".png";
-    img.style.display="block";
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-hero-overlay);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  color: var(--color-white);
+}
+
+#hero h1 {
+  margin: 0 0 10px;
+  color: var(--color-hero-title);
+  font-size: 35px;
+}
+
+#hero p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.hero-project { color: var(--color-hero-project); }
+.hero-limited { color: var(--color-hero-limited); font-weight: 700; }
+
+#hero button {
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  font-size: 16px;
+}
+
+/* =========================================================
+   INFORMACIJSKI ODSEKI
+   ========================================================= */
+.info-wrapper,
+.pr-wrapper,
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.info-left,
+.info-right,
+.about-left,
+.about-right,
+.pr-left,
+.pr-center,
+.pr-right { flex: 1; }
+
+.info-left p,
+.about-left p { margin: 10px 0; }
+
+.info-left ul,
+.about-right ul,
+.pr-left ul,
+.pr-right ul { padding-left: 20px; }
+
+.info-right {
+  display: flex;
+  justify-content: center;
+}
+
+.info-right img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 8px;
+}
+
+#problem-reseitev,
+#about,
+#usage,
+#offer,
+#konfigurator { background: var(--color-section-background); }
+
+.pr-wrapper { gap: 20px; }
+.pr-left,
+.pr-right { flex: 4; }
+
+.pr-center {
+  display: grid;
+  flex: 2;
+  place-items: center;
+}
+
+.pr-center img {
+  width: 100%;
+  max-width: 120px;
+  opacity: .8;
+}
+
+.about-wrapper { align-items: flex-start; }
+
+.about-right {
+  padding: 20px;
+  border: 1px solid var(--color-about-border);
+  border-radius: 8px;
+  background: var(--color-panel-alternate);
+}
+
+/* =========================================================
+   GALERIJA IN PONUDBA
+   ========================================================= */
+.usage-wrapper,
+.offer-wrapper {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.usage-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.usage-gallery img {
+  width: 100%;
+  max-width: 280px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.offer-price {
+  color: var(--color-highlight-text);
+  font-size: 28px;
+}
+
+.offer-lead { color: var(--color-highlight-text); }
+
+.offer-action {
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  font-size: 16px;
+}
+
+/* =========================================================
+   KONFIGURATOR
+   ========================================================= */
+.config-wrapper {
+  max-width: 900px;
+  margin: auto;
+}
+
+#viewer {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 320px;
+  margin: 20px auto 30px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-panel-background);
+}
+
+#intro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.layer,
+#base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+}
+
+.option-group {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid var(--color-option-border);
+  border-radius: 10px;
+  background: var(--color-panel-background);
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  background: var(--color-panel-background);
+  color: var(--color-text);
+}
+
+table {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 15px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-collapse: collapse;
+  border-radius: 10px;
+  background: var(--color-panel-background);
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-border-soft);
+  color: var(--color-text);
+}
+
+th { text-align: left; }
+
+.config-note {
+  color: var(--color-note);
+}
+
+#orderBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 14px 20px;
+  background: var(--color-accent);
+  color: var(--color-button-text);
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MOBILNI PRIKAZ
+   ========================================================= */
+@media (max-width: 700px) {
+  #hero h1 { font-size: 2.2rem; }
+
+  .info-wrapper,
+  .pr-wrapper,
+  .about-wrapper,
+  .usage-gallery {
+    flex-direction: column;
+    text-align: center;
   }
 
-  refresh();
-  updateTable();
-}
+  .info-right img { max-width: 280px; }
+  .usage-gallery img { max-width: 90%; }
 
-function getId(){
-  return Math.floor(1000 + Math.random() * 9000).toString();
-}
-
-function order(){
-
-  if(!isReady()){
-    alert("Izpolni vsa polja.");
-    return;
+  .pr-center img {
+    max-width: 80px;
+    transform: rotate(90deg);
   }
 
-  const orderId = getId();
-
-  const data = {
-    orderId: orderId,
-    ...state,
-    time: new Date().toISOString(),
-    key: SECRET
-  };
-
-  fetch(URL,{
-    method:"POST",
-    body: JSON.stringify(data)
-  })
-  .then(r => r.text())
-  .then(() => {
-
-    alert("NAROČENO ✔\n\nTvoj ID: " + orderId + "\nPrevzem na Emonadi.");
-
-  })
-  .catch(err => {
-
-    console.error(err);
-    alert("Napaka pri oddaji.");
-
-  });
+  .info-left ul,
+  .about-right ul,
+  .pr-left ul,
+  .pr-right ul {
+    display: inline-block;
+    text-align: left;
+  }
 }
-
-</script>
-
-</body>
-</html>
