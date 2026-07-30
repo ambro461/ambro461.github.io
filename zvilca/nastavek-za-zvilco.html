@@ -44,9 +44,6 @@
       Nastal kot projekt za osebno napredovanje in se razvil v konkreten izdelek.
     </p>
     <br>
-    <p class="hero-limited">
-      Omejena serija za Emonado: 20 kosov
-    </p>
 
     <button onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
       Sestavi svojega
@@ -198,13 +195,13 @@
   <div class="offer-wrapper">
 
     <h2>Si želiš nastavek, posebej ukrojen tvoji rutki?</h2>
-    <p class="offer-lead">Nastavek lahko prilagodiš z izbiro med barvami, ki so trenutno na voljo. <br><b>Nastavek ti predvideno lahko dostavim kar na Emonado.</b></p>
+    <p class="offer-lead">Nastavek lahko prilagodiš z izbiro med barvami, ki so trenutno na voljo. <br></p>
     <p>
-     Priporočen prostovoljni prispevek: <strong class="offer-price">3 €</strong> na kos
+     Priporočen prostovoljni prispevek: <strong class="offer-price">5€</strong> na kos
     </p>
 
     <p>
-      S prispevkom pokriješ osnovne stroške izdelave izdelka, da se lahko projekt ohranja.<br>Serija nastavkov za emonado je omejena na <b>20 kosov</b>.
+      S prispevkom pokriješ osnovne stroške izdelave izdelka, da se lahko projekt ohranja.
     </p>
 
     <button class="offer-action" onclick="document.getElementById('konfigurator').scrollIntoView({behavior:'smooth'})">
@@ -437,7 +434,7 @@ function order(){
   .then(r => r.text())
   .then(() => {
 
-    alert("NAROČENO ✔\n\nTvoj ID: " + orderId + "\nPrevzem na Emonadi.");
+    alert("NAROČENO ✔\n\nTvoj ID: " + orderId + "\n");
 
   })
   .catch(err => {
