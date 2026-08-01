@@ -225,6 +225,8 @@
     <img id="gred" class="layer">
 </div>
 
+<p style="color:gray; size: 4px; text-align: center;">Slika je simbolična</p>
+
 <div class="option-group">
 <h3>Prstan</h3>
 <button onclick="setChoice('prstan','modr')">Modra</button>
@@ -311,8 +313,12 @@ Oddaj rezervacijo
 </button>
 
 <p
-id="successMsg"
-style="display:none;color:green;font-weight:bold;">
+id="sendingMsg"
+style="display:none;text-align:center;font-weight:bold;">
+Pošiljanje podatkov
+</p>
+
+<p id="successMsg" style="display:none;color:green;font-weight:bold;">
 Vaš izdelek je naročen. V kratkem bo vaše naročilo pregledano in povzetek poslan na e-mail.
 </p>
 
@@ -375,6 +381,34 @@ const state = {
   tesnilo:null,
   started:false
 };
+
+let loadingInterval;
+
+function startLoading(){
+
+  let dots = 0;
+
+  loadingInterval = setInterval(() => {
+
+    dots++;
+
+    if(dots > 3){
+      dots = 1;
+    }
+
+    document.getElementById("sendingMsg").innerText =
+      "Pošiljanje podatkov" + ".".repeat(dots);
+
+  }, 500);
+
+}
+
+
+function stopLoading(){
+
+  clearInterval(loadingInterval);
+
+}
 
 function pretty(v){ return labelMap[v] || v || ""; }
 
@@ -439,6 +473,10 @@ function order(){
     return;
   }
 
+  document.getElementById("orderBtn").disabled = true;
+  document.getElementById("sendingMsg").style.display="block";
+  startLoading();
+
   const orderId = getId();
 
   const data = {
@@ -453,19 +491,31 @@ function order(){
     body: JSON.stringify(data)
   })
   .then(r => r.text())
+  
   .then(() => {
 
-    document.getElementById("orderBtn").style.display="none";
+    stopLoading();
 
+    document.getElementById("sendingMsg").style.display="none";
+    
+    document.getElementById("orderBtn").style.display="none";
+    
     document.getElementById("successMsg").style.display="block";
 
   })
-  .catch(err => {
+.catch(err => {
 
-    console.error(err);
-    alert("Napaka pri oddaji.");
+  stopLoading();
 
-  });
+console.error(err);
+
+document.getElementById("sendingMsg").style.display="none";
+
+document.getElementById("orderBtn").disabled = false;
+
+alert("Napaka pri oddaji.");
+
+});
 }
 
 </script>
