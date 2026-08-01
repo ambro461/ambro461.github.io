@@ -230,7 +230,11 @@
 <button onclick="setChoice('prstan','modr')">Modra</button>
 <button onclick="setChoice('prstan','rdec')">Rdeča</button>
 <button onclick="setChoice('prstan','rjav')">Rjava</button>
-<button onclick="setChoice('prstan','zelen')">Zelena</button>
+<button onclick="setChoice('prstan','zelen')">Olivno zelena</button>
+<button onclick="setChoice('prstan','zelen1')">Svetlo Zelena</button>
+<button onclick="setChoice('prstan','rumen')">Rumena</button>
+<button onclick="setChoice('prstan','roza')">Roza</button>
+<button onclick="setChoice('prstan','oranzen')">Oranžna</button>
 <button onclick="setChoice('prstan','les')">Les</button>
 </div>
 
@@ -239,7 +243,9 @@
 <button onclick="setChoice('vzvod','modr')">Modra</button>
 <button onclick="setChoice('vzvod','rdec')">Rdeča</button>
 <button onclick="setChoice('vzvod','rjav')">Rjava</button>
-<button onclick="setChoice('vzvod','zelen')">Zelena</button>
+<button onclick="setChoice('vzvod','zelen')">Olivno zelena</button>
+<button onclick="setChoice('vzvod','zelen1')">Svetlo Zelena</button>
+<button onclick="setChoice('vzvod','rumen')">Rumena</button>
 <button onclick="setChoice('vzvod','roza')">Roza</button>
 <button onclick="setChoice('vzvod','oranzen')">Oranžna</button>
 </div>
@@ -249,7 +255,9 @@
 <button onclick="setChoice('gred','modr')">Modra</button>
 <button onclick="setChoice('gred','rdec')">Rdeča</button>
 <button onclick="setChoice('gred','rjav')">Rjava</button>
-<button onclick="setChoice('gred','zelen')">Zelena</button>
+<button onclick="setChoice('gred','zelen')">Olivno zelena</button>
+<button onclick="setChoice('gred','zelen1')">Svetlo Zelena</button>
+<button onclick="setChoice('gred','rumen')">Rumena</button>
 <button onclick="setChoice('gred','roza')">Roza</button>
 <button onclick="setChoice('gred','oranzen')">Oranžna</button>
 <button onclick="setChoice('gred','crn')">Črna</button>
@@ -278,6 +286,7 @@
 <input placeholder="Steg*" oninput="update('steg',this.value)">
 <input placeholder="Četa*" oninput="update('ceta',this.value)">
 <input placeholder="Vod (opcijsko)" oninput="update('vod',this.value)">
+<input placeholder="Gmail*" oninput="update('gmail',this.value)">
 
 <h3>Povzetek naročila</h3>
 
@@ -288,6 +297,7 @@
 <tr><td>Steg</td><td id="t-steg"></td></tr>
 <tr><td>Četa</td><td id="t-ceta"></td></tr>
 <tr><td>Vod</td><td id="t-vod"></td></tr>
+<tr><td>Gmail</td><td id="t-gmail"></td></tr>
 
 <tr><td>Prstan</td><td id="t-prstan"></td></tr>
 <tr><td>Vzvod</td><td id="t-vzvod"></td></tr>
@@ -299,6 +309,12 @@
 <button id="orderBtn" onclick="order()">
 Oddaj rezervacijo
 </button>
+
+<p
+id="successMsg"
+style="display:none;color:green;font-weight:bold;">
+Vaš izdelek je naročen. V kratkem bo vaše naročilo pregledano in povzetek poslan na e-mail.
+</p>
 
 </div>
 </section>
@@ -334,7 +350,9 @@ const labelMap = {
   modr:"moder",
   rdec:"rdeč",
   rjav:"rjav",
-  zelen:"zelen",
+  zelen:"olivno zelen",
+  zelen1:"svetlo zelen",
+  rumen:"rumen",
   les:"les",
   roza:"roza",
   oranzen:"oranžen",
@@ -347,6 +365,7 @@ const labelMap = {
 
 const state = {
   ime:"",
+  gmail:"",
   steg:"",
   ceta:"",
   vod:"",
@@ -381,6 +400,7 @@ function updateTable(){
   document.getElementById("t-steg").innerText = state.steg || "";
   document.getElementById("t-ceta").innerText = state.ceta || "";
   document.getElementById("t-vod").innerText = state.vod || "";
+  document.getElementById("t-gmail").innerText = state.gmail || "";
 
   document.getElementById("t-prstan").innerText = pretty(state.prstan);
   document.getElementById("t-vzvod").innerText = pretty(state.vzvod);
@@ -435,7 +455,9 @@ function order(){
   .then(r => r.text())
   .then(() => {
 
-    alert("NAROČENO ✔\n\nTvoj ID: " + orderId + "\n");
+    document.getElementById("orderBtn").style.display="none";
+
+    document.getElementById("successMsg").style.display="block";
 
   })
   .catch(err => {
