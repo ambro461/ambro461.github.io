@@ -195,8 +195,8 @@ section { scroll-margin-top: 92px; }
 }
 
 .heror img {
-  width: 550px;
-  height: auto;
+  width: auto;
+  height: 200px;
   border-radius: 10px;
   padding-left: 20px;
 }
