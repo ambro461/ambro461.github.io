@@ -332,9 +332,13 @@ section { scroll-margin-top: 92px; }
 }
 
 .field-gallery img {
-  width: auto;
-  max-width: calc((100% - 48px) / 4);
-  object-fit: contain;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
+  height: auto;
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: initial;
 }
 
 .offer-price {
