@@ -178,10 +178,11 @@ section { scroll-margin-top: 92px; }
   display: flex;
   align-items: center;
   background-color: #4e745f;
+  justify-content: center;
 }
 
 .herol {
-  width: 50%;
+  width: 50%;s
   position: relative;
   z-index: 2;
   max-width: 700px;
