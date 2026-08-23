@@ -192,7 +192,9 @@ section { scroll-margin-top: 92px; }
   width: 50%;
 }
 
-#
+.heror img {
+  width: 150px;
+}
 
 #herol::before {
   content: "";
