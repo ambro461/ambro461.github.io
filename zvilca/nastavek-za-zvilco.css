@@ -288,7 +288,12 @@ section { scroll-margin-top: 92px; }
 /* =========================================================
    GALERIJA IN PONUDBA
    ========================================================= */
-.usage-wrapper,
+.usage-wrapper {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
 .offer-wrapper {
   max-width: 700px;
   margin: auto;
@@ -296,49 +301,38 @@ section { scroll-margin-top: 92px; }
 }
 
 .usage-gallery {
-  --gallery-photo-height: clamp(150px, 24vw, 200px);
   display: grid;
-  row-gap: 48px;
+  gap: 48px;
   margin-top: 24px;
 }
 
-.product-gallery,
-.field-gallery {
+.product-gallery {
   display: flex;
-  flex-flow: row nowrap;
+  justify-content: center;
   gap: 16px;
 }
 
-.product-gallery img,
-.field-gallery img {
-  flex: 0 1 auto;
-  height: var(--gallery-photo-height);
+.product-gallery img {
+  width: min(30vw, 220px);
+  aspect-ratio: 1 / 1;
   border: 1px solid var(--color-border);
   border-radius: 12px;
-}
-
-.product-gallery {
-  justify-content: center;
-}
-
-.product-gallery img {
-  width: var(--gallery-photo-height);
-  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
 .field-gallery {
-  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .field-gallery img {
   flex: 1 1 0;
   min-width: 0;
-  width: 0;
+  width: 100%;
   height: auto;
-  max-width: none;
-  aspect-ratio: auto;
-  object-fit: initial;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
 }
 
 .offer-price {
@@ -559,9 +553,14 @@ th { text-align: left; }
 
   .product-gallery,
   .field-gallery {
-    display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-gallery img,
+  .field-gallery img {
+    width: 100%;
+    height: auto;
   }
 
   .pr-center img {
