@@ -173,28 +173,21 @@ section { scroll-margin-top: 92px; }
 /* =========================================================
    UVODNA PASICA
    ========================================================= */
-#hero {
-  position: relative;
-  width: 100%;
-  height: 600px;
+
+#hero-basic {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  overflow: hidden;
-  text-align: center;
 }
 
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#herol {
+
 }
 
-#hero::before {
+#heror {
+
+}
+
+#herol::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -202,7 +195,7 @@ section { scroll-margin-top: 92px; }
   background: var(--color-hero-overlay);
 }
 
-.hero-content {
+.herol-content {
   position: relative;
   z-index: 2;
   max-width: 700px;
@@ -210,13 +203,13 @@ section { scroll-margin-top: 92px; }
   color: var(--color-white);
 }
 
-#hero h1 {
+#herol h1 {
   margin: 0 0 10px;
   color: var(--color-hero-title);
   font-size: 35px;
 }
 
-#hero p {
+#herol p {
   margin: 8px 0;
   font-size: 1.1rem;
 }
@@ -224,7 +217,7 @@ section { scroll-margin-top: 92px; }
 .hero-project { color: var(--color-hero-project); }
 .hero-limited { color: var(--color-hero-limited); font-weight: 700; }
 
-#hero button {
+#herol button {
   margin-top: 20px;
   padding: 14px 22px;
   background: var(--color-accent);
