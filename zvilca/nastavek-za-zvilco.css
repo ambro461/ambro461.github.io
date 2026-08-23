@@ -174,12 +174,12 @@ section { scroll-margin-top: 92px; }
    UVODNA PASICA
    ========================================================= */
 
-#herobasic {
+.herobasic {
   display: flex;
   align-items: center;
 }
 
-#herol {
+.herol {
   width: 50%;
   position: relative;
   z-index: 2;
@@ -188,9 +188,11 @@ section { scroll-margin-top: 92px; }
   color: var(--color-white);
 }
 
-#heror {
+.heror {
   width: 50%;
 }
+
+#
 
 #herol::before {
   content: "";
