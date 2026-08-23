@@ -297,22 +297,22 @@ section { scroll-margin-top: 92px; }
 
 .usage-gallery {
   display: grid;
-  gap: 20px;
+  row-gap: 48px;
   margin-top: 24px;
 }
 
 .product-gallery,
 .field-gallery {
-  display: grid;
-  gap: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
 }
-
-.product-gallery { grid-template-columns: repeat(3, 1fr); }
-.field-gallery { grid-template-columns: repeat(4, 1fr); }
 
 .product-gallery img,
 .field-gallery img {
-  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--color-border);
   border-radius: 12px;
@@ -536,7 +536,13 @@ th { text-align: left; }
   .info-right img { max-width: 280px; }
 
   .product-gallery,
-  .field-gallery { grid-template-columns: repeat(2, 1fr); }
+  .field-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-gallery img,
+  .field-gallery img { width: 100%; }
 
   .pr-center img {
     max-width: 80px;
