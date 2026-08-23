@@ -177,7 +177,7 @@ section { scroll-margin-top: 92px; }
 .herobasic {
   display: flex;
   align-items: center;
-  background-color: #1F2A24;
+  background-color: #3b5f4b;
 }
 
 .herol {
@@ -195,6 +195,7 @@ section { scroll-margin-top: 92px; }
 
 .heror img {
   width: 150px;
+  border-radius: 10px;
 }
 
 #herol::before {
