@@ -187,12 +187,11 @@ section { scroll-margin-top: 92px; }
 }
 
 .hero-background {
-  position: absolute;
   inset: 0;
   z-index: 0;
-  width: 100%;
+  width: 50px;
   height: 100%;
-  object-fit: cover;
+  align-items: center;
 }
 
 #hero::before {
