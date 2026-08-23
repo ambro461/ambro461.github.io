@@ -195,8 +195,9 @@ section { scroll-margin-top: 92px; }
 }
 
 .heror img {
-  width: 150px;
+  width: 650px;
   border-radius: 10px;
+  padding-left: 20px;
 }
 
 #herol::before {
