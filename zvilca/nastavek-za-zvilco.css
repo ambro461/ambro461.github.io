@@ -141,7 +141,7 @@ button:hover { opacity: .9; }
   min-height: 40px;
   padding: 10px 14px;
   border-radius: 6px;
-  background: #F2A93B;
+  background: var(--color-accent);
   color: var(--color-button-text);
   font-weight: 700;
   white-space: nowrap;
@@ -221,10 +221,10 @@ section { scroll-margin-top: 92px; }
 .hero-project { color: var(--color-hero-project); }
 .hero-limited { color: var(--color-hero-limited); font-weight: 700; }
 
-#herol button {
+#herol .button {
   margin-top: 20px;
   padding: 14px 22px;
-  background: var(--color-accent);
+  background-color: var(--color-accent);
   color: var(--color-button-text);
   font-size: 16px;
 }
